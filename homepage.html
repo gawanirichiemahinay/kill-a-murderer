@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hangman Game</h1>
+        <p>Guess the word and save the murderer!</p>
+    </header>
+
+    <main>
+        <div class="game-container">
+            <div class="game-info">
+                <p id="lives-display">Lives: 11</p>
+                <img id="hangman-img" src="images/hangman0.jpg" alt="Hangman Image" class="hangman-image">
+            </div>
+            <div class="word-display">
+                <p id="word-display">_ _ _ _ _</p>
+            </div>
+            <div class="input-container">
+                <input type="text" id="letter-input" maxlength="1" placeholder="Guess a letter">
+                <button onclick="guessLetter()" >Guess</button>
+            </div>
+            <div class="controls">
+                <button onclick="startNewGame()">Start New Game</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="win-modal" class="modal">
+        <div class="modal-content">
+            <h2>You Win!</h2>
+            <p>Congratulations! You guessed the word! You saved a murderer's life.</p>
+            <button onclick="startNewGame()">Play Again</button>
+        </div>
+    </div>
+
+    <div id="lose-modal" class="modal">
+        <div class="modal-content">
+            <h2>You Lose!</h2>
+            <p>Game Over! The word was: <span id="lose-word"></span>. Thanks for killing a murderer</p>
+            <button onclick="startNewGame()">Play Again</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hangman Game | Designed by Richie Mahinay</p>
+    </footer>
+
+    <script src="hangman.js"></script>
+</body>
+</html>
